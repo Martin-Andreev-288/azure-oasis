@@ -14,7 +14,7 @@ const Main = styled.main`
   background-color: var(--color-grey-50);
   padding: 4rem 4.8rem 6.4rem;
 `;
-// Improve the CSS by adding max-width and gap between the columns.
+
 const Container = styled.div`
   max-width: 120rem;
   margin: 0 auto;
