@@ -10,7 +10,8 @@ export async function getCabins() {
 
   return data;
 }
-
+// ACTUALLY, THIS WAS MADED IN LECTURE 358. Duplicating Cabins, but because it is related with this lecture - we're naming it in its name.
+// Something additional to fix - if the image already has a path, so in the case that an image has already been uploaded for this cabin, then that means that actually we shouldn't upload anything else here, and so we should fix that right here.
 export async function createEditCabin(newCabin, id) {
   const hasImagePath = newCabin.image?.startsWith?.(supabaseUrl);
 
@@ -39,6 +40,8 @@ export async function createEditCabin(newCabin, id) {
   }
 
   // 2. Upload image
+  if (hasImagePath) return data;
+
   const { error: storageError } = await supabase.storage
     .from("cabin-images")
     .upload(imageName, newCabin.image);
