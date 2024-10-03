@@ -71,7 +71,7 @@ function CabinRow({ cabin }) {
       description,
     });
   }
-
+  // fix a small bug - add opens="delete" and name="delete"
   return (
     <TableRow role="row">
       <Img src={image} />
@@ -96,12 +96,12 @@ function CabinRow({ cabin }) {
           <Modal.Window name="edit">
             {<CreateCabinForm cabinToEdit={cabin} />}
           </Modal.Window>
-          <Modal.Open>
+          <Modal.Open opens="delete">
             <button>
               <HiTrash />
             </button>
           </Modal.Open>
-          <Modal.Window>
+          <Modal.Window name="delete">
             <ConfirmDelete
               resourceName="cabins"
               disabled={isDeleting}
