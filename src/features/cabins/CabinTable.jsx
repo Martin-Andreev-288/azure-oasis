@@ -4,12 +4,15 @@ import { useCabins } from "./useCabins";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import { useSearchParams } from "react-router-dom";
+import Empty from "../../ui/Empty";
 
 function CabinTable() {
   const { isLoading, cabins } = useCabins();
   const [searchParams] = useSearchParams();
-
+  // We did that in the next lecture, but it is for this, that's why i am adding it in that way
+  // We're doing so that a concrete thing to be loaded if we don't have cabins
   if (isLoading) return <Spinner />;
+  if (!cabins.length) return <Empty resourceName="cabins" />;
 
   // 1) FILTER
   const filterValue = searchParams.get("discount") || "all";
