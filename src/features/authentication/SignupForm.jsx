@@ -18,7 +18,7 @@ function SignupForm() {
       }
     );
   }
-  // add disabled in few places and change the onSettled above to stop the error from some of the previous screenshots
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <FormRow label="Full name" error={errors?.fullName?.message}>

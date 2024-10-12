@@ -7,16 +7,13 @@ import {
   HiOutlineHomeModern,
   HiOutlineUsers,
 } from "react-icons/hi2";
-// Build the sidbear and main navigation
-// Using react icons for better visuality - install them with npm i react-icons
-// see the whole function MainNav in the next screenshot
-// we replaced the images where they should be, that's why there are so many changes
+
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
 `;
-// it was const Link = styled.a
+
 const StyledNavLink = styled(NavLink)`
   &:link,
   &:visited {
